@@ -1,3 +1,4 @@
+using CleanArch.Api.Configurations;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using MediatR;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<UniversityDbContext>(options =>
 });
 
 builder.Services.AddMediatR(typeof(Program));
+builder.Services.RegisterAutoMapper();
 
 RegisterServices(builder.Services);
 
